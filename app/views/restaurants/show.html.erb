@@ -1,0 +1,14 @@
+
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+
+<h2>les avis...</h2>
+<% @restaurant.reviews.each do |avis| %>
+  <p><%= avis.rating %></p>
+  <p><%= avis.content %></p>
+<% end %>
+
+<%= link_to "Retour à la liste", restaurants_path, class: "btn btn-primary"%>
+<%= link_to "Ajouter un avis", new_restaurant_review_path(@restaurant), class: "btn btn-success"%>
